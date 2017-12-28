@@ -9,17 +9,19 @@ into the `:plugins` vector of your `project.clj` and add :watch configuration to
 
 Example configuration (run compile task when .clj file is changed):
 
-    (defproject sample-project
-      ...
-      :watch {
-        :rate 500
-        :color :red
-        :watchers {
-          :compile {
-            :watch-dirs ["src"]
-            :file-patterns [#"\.clj"]
-            :tasks ["compile"]}}}
-      ...)
+```clojure
+(defproject sample-project
+  ...
+  :watch {
+  :rate 150
+  :color :red
+  :watchers
+  {:compile
+   {:watch-dirs ["src"]
+    :file-patterns [#"\.clj"]
+    :tasks ["compile"]}}}
+...)
+```
 
 and just run watch task
 
